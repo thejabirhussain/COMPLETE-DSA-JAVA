@@ -101,14 +101,14 @@ public class Q2 {
         }
         System.out.println("Maximum Subarray Sum using Kadane's Algorithm: " + maxsum);
     }
-    public static void buystock(int prices[]) {
-        int res=-0;
-       for(int i=0;i<prices.length;i++) {
-        for(int j=i+1;j<prices.length;j++) {
-            res = Math.max(res, prices[j]-prices[i]);
-        }
-       }
-       System.out.println("Maximum Profit: " + res);
+    public static void buyandsellstock(int prices[]) {
+       int res=0;
+         for(int i=0;i<prices.length;i++) {
+            for(int j=i+1;j<prices.length;j++) {
+                int profit = prices[j] - prices[i];
+                res = Math.max(res, profit);
+            }}
+            System.out.println(res);
     }
     public static void main(String[] args) {
        int arr[] = {7,1,5,3,6,4};
@@ -118,6 +118,6 @@ public class Q2 {
         // printmaxsubarraysum(arr);
         // printsubarraysum(arr);
         // kadanesAlgorithm(arr);
-        buystock(arr);
+        buyandsellstock(arr);
     }
 }
